@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.head h1{
+    background-color: rgba(144, 70, 167, 0.7);
+    text-align: center;
+    margin:2px;
+}
+
+h1{
+    padding: 10px;
+    color: antiquewhite;
+}
+
+form{
+    margin: 40px auto;
+    width: 800px;
+    background-color: rgba(250, 235, 215, 0.8);
+    text-align: center;
+    display: block;
+    border: 2px solid grey;
+    -webkit-box-shadow: 0 0 5px 8px #fff;
+    -moz-box-shadow: 0 0 5px 8px #fff;
+    box-shadow: 0 0 5px 8px rgb(253, 252, 252);
+}
+
+.buttons{
+    width: 100%;
+    display: inline-block;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(102, 99, 99);
+}
+
+.buttons button{
+    background-color: transparent;
+    font-size: 14px;
+    padding: 6px;
+    margin: 6px;
+    border: none;
+}
+
+.buttons button:hover{
+    border: 1px solid gray;
+    color: black;
+}
+
+form .details{
+    margin-bottom: 30px;
+}
+form .details .date input{
+    width: 34%;
+    margin-left: 70px;
+}
+
+form .details button{
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+form h3{
+    text-align: left;
+    margin: 10px;
+}
+
+input, select{
+    width:80%;
+    padding: 8px;
+    margin: 2px;
+}
+
+input[type="month"]::before{
+    content: attr(placeholder);
+    color: rgb(110, 108, 108);
+}
+
+.file-upload {
+    width: 79%;
+    border: 1px solid rgb(158, 153, 153);
+    background-color: #fff;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+input[type="file"]::before{
+    content: attr(placeholder);
+    color: rgb(110, 108, 108);
+}
+
+.wrapper .top{
+    height: auto;
+    text-align: left;
+    background-color: rgb(16, 100, 139);
+    color: beige;
+    font-size: 15px;
+    padding: 3px;
+}
+
+.wrapper .top .imgtop{
+    text-align: center;
+    display: flex;
+    position: relative;
+}
+
+.wrapper .top .name .bname{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.wrapper .top #ddesignation{
+    padding-left: 15px;
+    margin-left: 20px;
+    text-align: left;
+    border-bottom: 2px solid red;
+    width: 50%;
+}
+
+img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.wrapper #dobjective{
+    position: absolute;
+    bottom: 0; 
+    right: 0;
+    text-align: right;
+    display: block;
+    float: right;
+    padding: 5px;
+    margin-left: 40%;
+    margin-top: 100px;
+}
+
+.wrapper .bottom{
+    display: flex;
+    margin: 2px;
+}
+
+.wrapper .left{
+    background-color: rgb(21, 127, 177);
+    height:1000px;
+    width: 25%;
+}
+
+.wrapper .left .contactinfo{
+    width: 100%;
+    padding-top: 25px;
+    color: rgb(71, 70, 70);
+    display: flex;
+}
+
+.wrapper .bottom .left .leftdisplay{
+    margin: 50px auto;
+    text-align: left;
+}
+
+.wrapper .bottom .left .leftdisplay .leftdisplaydata{
+    margin: 15px;
+}
+
+.wrapper .bottom .right{
+    padding: 15px 10px;
+}
+
+.wrapper .bottom .right .innerdata{
+    text-align: left;
+    margin-left: 18px;
+    margin: 13px;
+}
+
+h4{
+    font-size: 18px;
+}

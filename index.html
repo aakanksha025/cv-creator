@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
+        <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous">
+        </script>
+    </head>
+
+    <body background="images/background.jpg">
+        <div class="head"><h1>CV CREATOR</h1></div>
+        
+        <form id="input">
+            <div class="buttons">
+                <button onclick="personal()"><a href="#input">Personal Information</a></button>
+                <button onclick="objective()"><a href="#input">Objective</a></button>
+                <button onclick="education()"><a href="#input">Education</a></button>
+                <button onclick="certificate()"><a href="#input">Certifications</a></button>
+                <button onclick="skills()"><a href="#input">Skills</a></button>
+                <button onclick="language()"><a href="#input">Languages</a></button>
+                <button onclick="job()"><a href="#input">Work Experience</a></button>
+            </div>
+
+            <div class="container" id="objective" style="display:none;">
+                <div class="details">
+                    <h3>OBJECTIVE</h3>
+                    <textarea rows="6" cols="88" id="obj" placeholder=" Write your career objective..." onkeyup="DisplayObjective()"></textarea>
+                </div>
+            </div>
+
+                <div class="details" id="personal" style="display:none;">
+                    <h3>PERSONAL INFORMATION</h3>
+                    <input type="text" id="fname" placeholder="First name" onkeyup="DisplayFname()"><br>
+                    <input type="text" id="lname" placeholder="Last name" onkeyup="DisplayLname()"><br>
+                    <input type="text" id="designation" placeholder="Designation" onkeyup="DisplayDesignation()"><br>
+                    <input type="text" id="contact" placeholder="Contact" onkeyup="DisplayContact()"><br>
+                    <input type="text" id="address" placeholder="Address" onkeyup="DisplayAddress()"><br>
+                    <input type="text" id="email" placeholder="Email"  onkeyup="Displaymail()"><br>
+                    <input type="file" id="img" accept="image/*" placeholder="Select image: " class="file-upload" onchange="loadFile(event)">
+                </div>
+
+                <div class="details" id="education" style="display:none;">
+                    <h3>EDUCATION</h3>
+                    <div>
+                        <input type="text" id="ecoursename1" placeholder="Course Name" onkeyup="DisplayEduCName1()"><br>
+                        <input type="text" id="einstitutename1" placeholder="Institute Name" onkeyup="DisplayEduIName1()"><br>
+                        <div class="date" style="display: flex;">
+                            <input type="month" id="esdate1" placeholder="Start Date:&nbsp;" onclick="setTimeout(DisplayEduStartdate1, 10000)"><br>
+                            <input type="month" id="eedate1" placeholder="End Date:&nbsp;" onclick="setTimeout(DisplayEduEnddate1, 10000)"><br>
+                        </div>
+                        <textarea rows="4" cols="89" id="eduex1" placeholder=" Add other information..." onkeyup="DisplayEduExtra1()"></textarea>
+                    </div>
+
+                    <p id="educfield1"></p> 
+                    <p id="educfield2"></p> 
+                    <p id="educfield3"></p> 
+                    <p id="educfield4"></p> 
+                    <button id="edubtn1" onclick="addeducationField1()"><i class="fa fa-plus"></i>  Add entry</button>
+                </div>
+
+                <div class="details" id="certificate" style="display:none;">
+                    <h3>CERTIFICATIONS</h3>
+                    <div>
+                        <input type="text" id="cercname1" placeholder="Course Name" onkeyup="DisplayCCName1()"><br>
+                        <input type="text" id="ceriname1" placeholder="Institute Name" onkeyup="DisplayCIName1()"><br>
+                        <div class="date" style="display: flex;">
+                            <input type="month" id="cersdate1" placeholder="Start Date:&nbsp;" onclick="setTimeout(DisplayCSDate1, 10000)"><br>
+                            <input type="month" id="ceredate1" placeholder="End Date:&nbsp;" onclick="setTimeout(DisplayCEDate1, 10000)"><br>
+                        </div>
+                        <textarea rows="4" cols="89" id="cerextra1" placeholder=" Add other information..." onkeyup="DisplayCExtra1()"></textarea>
+                    </div>
+                    <p id="cerfield1"></p>
+                    <p id="cerfield2"></p>
+                    <p id="cerfield3"></p>
+                    <p id="cerfield4"></p>
+                    <button id="cerbtn1" onclick="addcertificateField1()"><i class="fa fa-plus"></i>  Add entry</button>
+                </div>
+
+                <div class="details" id="job" style="display:none;">
+                    <h3>WORK EXPERIENCE</h3>
+                    <div>
+                        <input type="text" id="wecname1" placeholder="Job Title" onkeyup="DisplayweCName1()"><br>
+                        <input type="text" id="weiname1" placeholder="Company Name" onkeyup="DisplayweIName1()"><br>
+                        <div class="date" style="display: flex;">
+                            <input type="month" id="wesdate1" placeholder="Start Date:&nbsp;" onclick="setTimeout(DisplayweSDate1, 10000)"><br>
+                            <input type="month" id="weedate1" placeholder="End Date:&nbsp;" onclick="setTimeout(DisplayweEDate1, 10000)"><br>
+                        </div>
+                        
+                        <textarea rows="4" cols="89" id="weextra1" placeholder=" Add other information..." onkeyup="DisplayweExtra1()"></textarea>
+                    </div>
+                    <p id="wefield1"></p>
+                    <p id="wefield2"></p>
+                    <p id="wefield3"></p>
+                    <p id="wefield4"></p>
+                    <button id="webtn1" onclick="addweField1()"><i class="fa fa-plus"></i>  Add entry</button>
+                </div>
+
+                <div class="details" id="skills" style="display:none;">
+                    <h3>SKILLS</h3>
+                    <input type="text" id="skil" onkeyup="DisplaySkill()"></input><br> 
+                    <p id="skill"></p>
+                    <p id="skill1"></p>
+                    <p id="skill2"></p>
+                    <p id="skill3"></p>
+                    <p id="skill4"></p>
+                    <p id="skill5"></p>
+                    <p id="skill6"></p>
+                    <p id="skill7"></p>
+                    <p id="skill8"></p>
+                    <p id="skill9"></p>
+                    <p id="skill10"></p>
+                    <button id="skillbtn" onclick="addskillfield()"><i class="fa fa-plus"></i>  Add entry</button>
+                    
+                </div>
+
+                <div class="details" id="languages" style="display:none;">
+                    <h3>LANGUAGES</h3>
+                    <input type="text" id="language1" onkeyup="DisplayLanguage1()"><br>
+                    <p id="language2"></p>
+                    <p id="language3"></p>
+                    <p id="language4"></p>
+                    <p id="language5"></p>
+                    <p id="language6"></p>
+                    <p id="language7"></p>
+                    <p id="language8"></p>
+                    <p id="language9"></p>
+                    <p id="language10"></p>
+                    <p id="language11"></p>
+                    <p id="language12"></p>
+                    <button id="langbtn1" onclick="addlangfield1()"><i class="fa fa-plus"></i>  Add entry</button>
+                </div>  
+            </div>
+        </form>
+
+        <form class="wrapper">
+            <div class="top">
+                <div class="imgtop">
+                    <img id="output" src="images/user.png"/>
+                <div class="name">
+                    <h1>
+                        <div class="bname" id="dfname">First Name</div>
+                        <div class="bname" id="dlname">Last Name</div>
+                    </h1>
+                
+                    <h2>
+                        <div id="ddesignation">Designation</div>
+                    </h2>
+                </div>
+                <div id="dobjective">Career Objective</div>
+            </div>
+            
+                
+                
+                
+            </div>
+            <div class="bottom">
+                <div class="left">
+                    <div class="contactinfo">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-mobile"></i>&nbsp;&nbsp;<div id="dcontact">Phone Number</div><br></div>
+                    <div class="contactinfo">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-envelope"></i>&nbsp;&nbsp;<div id="demail">Email</div><br></div>
+                    <div class="contactinfo">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-map-marker"></i>&nbsp;&nbsp;<div id="daddress">Location</div><br></div>
+
+                    <div class="leftdisplay">
+                        <h3>SKILLS</h3>
+                        <div class="leftdisplaydata">
+                            <p id="dskill1"></p>
+                            <p id="dskill2"></p>
+                            <p id="dskill3"></p>
+                            <p id="dskill4"></p>
+                            <p id="dskill5"></p>
+                            <p id="dskill6"></p>
+                            <p id="dskill7"></p>
+                            <p id="dskill8"></p>
+                            <p id="dskill9"></p>
+                            <p id="dskill10"></p>
+                            <p id="dskill11"></p>
+                            <p id="dskill12"></p>
+                        </div>
+                        
+                    </div>
+
+                    <div class="leftdisplay">
+                        <h3>LANGUAGES</h3>
+                        <div class="leftdisplaydata">
+                            <p id="dlanguage1"></p>
+                            <p id="dlanguage2"></p>
+                            <p id="dlanguage3"></p>
+                            <p id="dlanguage4"></p>
+                            <p id="dlanguage5"></p>
+                            <p id="dlanguage6"></p>
+                            <p id="dlanguage7"></p>
+                            <p id="dlanguage8"></p>
+                            <p id="dlanguage9"></p>
+                            <p id="dlanguage10"></p>
+                            <p id="dlanguage11"></p>
+                            <p id="dlanguage12"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <div class="displayhead">
+                        <h3>EDUCATION</h3>
+                    </div>
+                    <div class="innerdata">
+                        <h4><p id="dcoursename"></p></h4>
+                        <p id="dinstitutename"></p>
+                        <div class="date" style="display: flex;">
+                            <p id="dstartdate"></p>
+                            <p id="deenddate"></p>
+                        </div>
+                        <p id="deextra"></p>
+                    </div>
+                    <div class="innerdata">
+                        <h4><p id="dcoursename2"></p></h4>
+                        <p id="dinstitutename2"></p>
+                        <div class="date" style="display: flex;">
+                            <p id="dstartdate2"></p>
+                            <p id="deenddate2"></p>
+                        </div>
+                        <p id="deextra2"></p>
+                    </div>
+                    <div class="innerdata">
+                        <h4><p id="dcoursename3"></p></h4>
+                        <p id="dinstitutename3"></p>
+                        <div class="date" style="display: flex;">
+                            <p id="dstartdate3"></p>
+                            <p id="deenddate3"></p>
+                        </div>
+                        <p id="deextra3"></p>
+                    </div>
+                    <div class="innerdata">
+                        <h4><p id="dcoursename4"></p></h4>
+                        <p id="dinstitutename4"></p>
+                        <div class="date" style="display: flex;">
+                            <p id="dstartdate4"></p>
+                            <p id="deenddate4"></p>
+                        </div>
+                        <p id="deextra4"></p>
+                    </div>
+                    <div class="innerdata">
+                        <h4><p id="dcoursename5"></p></h4>
+                        <p id="dinstitutename5"></p>
+                        <div class="date" style="display: flex;">
+                            <p id="dstartdate5"></p>
+                            <p id="deenddate5"></p>
+                        </div>
+                        <p id="deextra5"></p>
+                    </div>
+
+                    <div class="displayhead">
+                        <h3>CERTIFICATIONS</h3>
+                    </div>
+                    <div class="innerdata">
+                        <h4><p id="dcercname1"></p></h4>
+                        <p id="dceriname1"></p>
+                        <div class="date" style="display: flex;">
+                            <p id="dcersdate1"></p>
+                            <p id="dceredate1"></p>
+                        </div>
+                        <p id="dcerextra1"></p>
+                    </div>
+                    <div class="innerdata">
+                        <h4><p id="dcercname2"></p></h4>
+                        <p id="dceriname2"></p>
+                        <div class="date" style="display: flex;">
+                            <p id="dcersdate2"></p>
+                            <p id="dceredate2"></p>
+                        </div>
+                        <p id="dcerextra2"></p>
+                    </div>
+                    <div class="innerdata">
+                        <h4><p id="dcercname3"></p></h4>
+                        <p id="dceriname3"></p>
+                        <div class="date" style="display: flex;">
+                            <p id="dcersdate3"></p>
+                            <p id="dceredate3"></p>
+                        </div>
+                        <p id="dcerextra3"></p>
+                    </div>
+                    <div class="innerdata">
+                        <h4><p id="dcercname4"></p></h4>
+                        <p id="dceriname4"></p>
+                        <div class="date" style="display: flex;">
+                            <p id="dcersdate4"></p>
+                            <p id="dceredate4"></p>
+                        </div>
+                        <p id="dcerextra4"></p>
+                    </div>
+                    <div class="innerdata">
+                        <h4><p id="dcercname5"></p></h4>
+                        <p id="dceriname5"></p>
+                        <div class="date" style="display: flex;">
+                            <p id="dcersdate5"></p>
+                            <p id="dceredate5"></p>
+                        </div>
+                        <p id="dcerextra5"></p>
+                    </div>
+
+
+                
+                    <div class="displayhead">
+                        <h3>WORK EXPERIENCE</h3>
+                    </div>
+                    <div class="innerdata">
+                        <h4><p id="dwecname1"></p></h4>
+                        <p id="dweiname1"></p>
+                        <div class="date" style="display: flex;">
+                            <p id="dwesdate1"></p>
+                            <p id="dweedate1"></p>
+                        </div>
+                        <p id="dweextra1"></p>
+                    </div>
+                    <div class="innerdata">
+                        <h4><p id="dwecname2"></p></h4>
+                        <p id="dweiname2"></p>
+                        <div class="date" style="display: flex;">
+                            <p id="dwesdate2"></p>
+                            <p id="dweedate2"></p>
+                        </div>
+                        <p id="dweextra2"></p>
+                    </div>
+                    <div class="innerdata">
+                        <h4><p id="dwecname3"></p></h4>
+                        <p id="dweiname3"></p>
+                        <div class="date" style="display: flex;">
+                            <p id="dwesdate3"></p>
+                            <p id="dweedate3"></p>
+                        </div>
+                        <p id="dweextra3"></p>
+                    </div>
+                    <div class="innerdata">
+                        <h4><p id="dwecname4"></p></h4>
+                        <p id="dweiname4"></p>
+                        <div class="date" style="display: flex;">
+                            <p id="dwesdate4"></p>
+                            <p id="dweedate4"></p>
+                        </div>
+                        <p id="dweextra4"></p>
+                    </div>
+                    <div class="innerdata">
+                        <h4><p id="dwecname5"></p></h4>
+                        <p id="dweiname5"></p>
+                        <div class="date" style="display: flex;">
+                            <p id="dwesdate5"></p>
+                            <p id="dweedate5"></p>
+                        </div>
+                        <p id="dweextra5"></p>
+                    </div>
+
+                    
+                </div>
+
+                
+            </div>
+        </form>
+    </body>
+</html>
